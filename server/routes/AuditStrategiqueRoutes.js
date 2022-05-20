@@ -6,6 +6,13 @@ router.post("/", async (req, res) => {
   const objectifs = ["objectif 1", "objectif 2"];
   const rep = req.body;
   console.log(algo(rep, objectifs));
+   const newQuestion = new QuestionStrategique(req.bod);
+   try {
+     const savedQuestion = await newQuestion.save();
+     res.status(200).json(savedQuestion);
+   } catch (err) {
+     res.status(500).json(err);
+   }
 });
 
 router.get("/", async (req, res) => {

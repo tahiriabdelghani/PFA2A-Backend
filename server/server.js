@@ -8,11 +8,13 @@ app.use(cors());
 
 import connectDB from "./db/connect.js";
 import AuditStrategiqueRoutes from "./routes/AuditStrategiqueRoutes.js";
+import AuthRoutes from "./routes/auth/index.js";
 
 app.use(express.json());
 console.log("Helloooo");
 
 app.use("/audit-strategique", AuditStrategiqueRoutes);
+app.use("/",AuthRoutes);
 
 const port = process.env.PORT || 5000;
 
