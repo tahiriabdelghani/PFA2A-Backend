@@ -12,7 +12,7 @@ const historiqueResponseAuditStrategiqueSchema = new mongoose.Schema({
     },
 
 
-    objectivesScores: {
+    selectedObjectives: {
         type: Array
 
     },
